@@ -68,7 +68,7 @@ void add()
     struct student std;
     char another ='y';
     system("cls");
-    fp = fopen("record.txt","a+");
+    fp = fopen("E:/record.txt","a+");
     if(fp == NULL)
 	{
         printf("\n\n\n\t\t\tError opening file");
@@ -109,9 +109,9 @@ void view()
     struct student std;
     system("cls");
     printf("\n\n\n\t\t\t<--:VIEW RECORD:-->");
-    printf("\nS.No   Name of Student       Mobile No   Roll No  Course      Branch");
+    printf("\n\nS.No   Name of Student       Mobile No   Roll No  Course      Branch");
     printf("\n--------------------------------------------------------------------");
-    fp = fopen("record.txt","r+");
+    fp = fopen("E:/record.txt","r+");
     if(fp == NULL)
 	{
         printf("\nError opening file.");
@@ -139,7 +139,7 @@ void search()
     printf("\n\nEnter name of student : ");
     fflush(stdin);
     gets(stname);
-    fp = fopen("record.txt","rb+");
+    fp = fopen("E:/record.txt","rb+");
     if(fp == NULL)
 	{
         printf("\n\n\n\t\tError opening file");
@@ -170,7 +170,7 @@ void modify()
     printf("\n\n\n\t\tEnter name of student to modify: ");
     fflush(stdin);
     gets(stname);
-    fp = fopen("record.txt","r+");
+    fp = fopen("E:/record.txt","r+");
     if(fp == NULL){
         printf("\n\n\tError opening file");
         exit(1);
@@ -212,13 +212,13 @@ void deleterec()
     printf("\n\n\tEnter name of student to delete record : ");
     fflush(stdin);
     gets(stname);
-    fp = fopen("record.txt","r+");
+    fp = fopen("E:/record.txt","r+");
     if(fp == NULL)
 	{
         printf("Error opening file");
         exit(1);
     }
-    ft = fopen("temp.txt","w+");
+    ft = fopen("E:/temp.txt","w+");
     if(ft == NULL)
 	{
         printf("\n\n\tError opening file");
@@ -230,8 +230,8 @@ void deleterec()
     }
     fclose(fp);
     fclose(ft);
-    remove("record.txt");
-    rename("temp.txt","record.txt");
+    remove("E:/record.txt");
+    rename("E:/temp.txt","E:/record.txt");
     printf("\n\n\tPress any key to continue.");
     getch();
     menu();
